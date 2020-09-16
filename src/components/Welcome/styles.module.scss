@@ -1,0 +1,30 @@
+@import 'resources';
+
+.container {
+    display: grid;
+    place-items: center;
+
+    width: 100vw;
+    height: 100vh;
+    padding-top: 3rem;
+
+    background: $paletteBg;
+
+    overflow: hidden;
+
+    & .title {
+        font-size: 3rem;
+        font-weight: bold;
+        color: $paletteWhite;
+    }
+
+    & .archimed {
+        @media (max-width: 1940px) {
+            transform: scale(0.9);
+        }
+
+        rect {
+            fill: $paletteBg;
+        }
+    }
+}

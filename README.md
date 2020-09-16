@@ -1,68 +1,101 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# TASK
 
-## Available Scripts
+```
+Create a React application for displaying and storing data using https://swapi.dev/
+and any image searching API (Google, Bing or whatever you want).
 
-In the project directory, you can run:
+Please, read this document all the way to the end.
+```
 
-### `yarn start`
+Completing a a test case may require:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-   Complexity "Easy-peasy" - requires ~1 hour to complete and no external sources or reading documentation.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+-   Complexity "Good job" - requires ~1.5 hours to complete, also may require checking libraries documentation.
 
-### `yarn test`
+-   Complexity "Wow! We've noticed your efforts" - requires ~2.5-3 hours to complete and requires reading quite an amount of documentation for used libraries.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+_**You may choose whatever option you like, according to the amount of time
+that you feel affordable for yourself on spending for a test.**_
 
-### `yarn build`
+## _Tech requirements_
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   You may use either provided struture in this repo or `create-react-app` (_recommended_) or any other React setup you like. _**App MUST be written using React Hooks API.**_
+-   As a result we'd like having a link for a git repository with a task.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### **Complexity: Easy-peasy**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. App must display 2 tabs - `Starships` and `Saved`.
+2. `Starships` tab must display images of starships (you get starships names from Swapi, images you get from an image provider of your choice).
+3. Clicking on an image saves it and it will be avaiilable in a `Saved` tab.
 
-### `yarn eject`
+#### **Complexity: Good job**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+0. Everything from "Easy-peasy", but also the following:
+1. App must display three tabs that you can switch between: `Planets`, `Starships` and `Saved`.
+2. Clicking the `Saved` tab moves us to the page with all the saved images, which also contains an input field that allows us to filter images by the name.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### **Complexity: Wow! We've noticed your efforts**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+0. Everything from "Easy-peasy" and "Good job", but also the following:
+1. App must display three tabs that you can switch between: `Planets`, `Starships`, `Persons` and `Saved`.
+2. Clicking any of the following tabs [ `Planets`, `Persons`, `Starships` ] displays a list with all items that are provided by Swapi.
+3. Clicking any item from the list displays a gallery with unequal rows / columns (a.k.a. "Masonry grid") with images representing chosen item (images are fetched via an image searching API you've chosen).
+4. Clicking an image saves it to the `Saved` and show a toaster telling about the result of an operation.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## _Data management_
 
-## Learn More
+-   For global state management use Redux.
+-   For connecting Redux you may use `react-redux's "connect"` or hooks or whatever approach you like.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### **Complexity: Easy-peasy**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Saved items must be stored in Redux store.
+2. Asynchronous operations may be handled just by sending a request inside a component.
 
-### Code Splitting
+#### **Complexity: Good job**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+0. Everything from "Easy-peasy", but also the following:
+1. For asynchronous operations use whatever tool you like (like `redux-thunk`).
+2. Redux store MUST NOT be accessible via `Redux devtools` extension in a production mode.
 
-### Analyzing the Bundle Size
+#### **Complexity: Wow! We've noticed your efforts**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+0. Everything from "Easy-peasy" and "Good job", but also the following:
+1. For handling side-effects and redux management use `redux-saga`.
 
-### Making a Progressive Web App
+## _Styling and layouts_
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+-   Usage of SCSS modules is a MUST. Using SCSS tools like mixins, variables etc will be a plus.
+-   Usage of `styled-components` is a plus if they're organized as modules.
 
-### Advanced Configuration
+#### **Complexity: Easy-peasy**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+1. All layout should be done using either CSS Grid or CSS Flexbox (using CSS Grid will be a plus).
+2. Images should be placed in a grid.
+3. Adding hover effects will be a plus.
+4. Having fancy styling will be a plus.
 
-### Deployment
+#### **Complexity: Good job**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+0. Everything from "Easy-peasy", but also the following:
+1. Every image must have an appear transition on mount (we suggest going with _opacity + bottom-to-top slide in_ transition).
+2. Adding transition for pages will be a plus.
 
-### `yarn build` fails to minify
+#### **Complexity: Wow! We've noticed your efforts, styling ninja**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+0. Everything from "Easy-peasy" and "Good job", but also the following:
+1. Images should be placed in a grid with unequal columns / rows (a.k.a. Masonry layout), which must be created with just CSS (and JS if needed). You MUST NOT use a library.
+2. Including light and darks theme will be a plus.
+
+### _Useful hints_:
+
+1. Use a library for toasters - this will save you a bit of time and efforts.
+2. Save not only the image itself, but also some additional data about it (at least a name) - this will help you in filtering.
+3. Using some memoization strategies will be a plus.
+4. Try making your code clean, readable and maintainable - this will be a HUGE plus.
+5. Creating a transition where images appear smoothly one by one (not all at the same time) will be a plus, cuz it looks fancy :)
+6. Responsiveness will be a plus
+7. Creating some functionality which was not stated in a spec but shows your skills may be considered as a plus.
+8. Prepare before starting a test work and find a good balance between time spent and a result, as it also may be reviewed.
+9. Try making commit messages nice and informative.
